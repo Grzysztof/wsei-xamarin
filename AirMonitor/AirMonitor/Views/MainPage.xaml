@@ -12,41 +12,25 @@
         <Grid>
             <StackLayout Style="{StaticResource DetailsLayoutStyle}">
                 <Frame Style="{StaticResource CaqiFrameStyle}">
-                    <Label
-                     HorizontalTextAlignment="Center"
-                        VerticalTextAlignment="Center">
+                    <Label Style="{StaticResource CenteredTextStyle}">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span
-                                    Text="56"
-                                    FontAttributes="Bold"
-                                    TextColor="Black"
-                                    FontSize="32"/>
+                                <Span Style="{StaticResource CaqiValueSpanStyle}"
+                                      Text="56"/>
                                 <Span
                                     Text="{x:Static x:Environment.NewLine}"/>
-                                <Span
-                                    Text="CAQI"
-                                    FontSize="12"
-                                    TextColor="DarkSlateGray"/>
+                                <Span Style="{StaticResource CaqiUnitSpanStyle}"
+                                      Text="CAQI"/>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
                 </Frame>
-                <Label
-                    Text="Świetna jakość!"
-                    FontSize="20"
-                    TextColor="Black"
-                    FontAttributes="Bold"
-                    HorizontalTextAlignment="Center"/>
-                <Label
-                    Text="Możesz bezpiecznie wyjść z domu bez swojej maski anty-smogowej i nie bać się o swoje zdrowie."
-                    FontSize="14"
-                    TextColor="Black" />
+                <Label Style="{StaticResource CaqiTitleStyle}"
+                    Text="Świetna jakość!"/>
+                <Label Style="{StaticResource CaqiDescriptionStyle}"
+                    Text="Możesz bezpiecznie wyjść z domu bez swojej maski anty-smogowej i nie bać się o swoje zdrowie."/>
 
-                <BoxView
-                    HeightRequest="1"
-                    HorizontalOptions="Fill"
-                    BackgroundColor="LightGray"/>
+                <BoxView Style="{StaticResource VerticalSeparatorStyle}"/>
 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -59,30 +43,22 @@
                             <Label>
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span
-                                            Text="34"
-                                            TextColor="Black"
-                                            FontSize="20"/>
-                                        <Span
+                                        <Span Style="{StaticResource NormalTextSpanStyle}"
+                                            Text="34"/>
+                                        <Span Style="{StaticResource SmallTextSpanStyle}"
                                             Text=" mg/m3 "
                                             TextColor="Black"
                                             FontSize="14"/>
-                                        <Span
-                                            Text="(137%)"
-                                            TextColor="Black"
-                                            FontSize="20"/>
+                                        <Span Style="{StaticResource NormalTextSpanStyle}"
+                                            Text="(137%)"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
                         </controls:ContentWithHeader.ControlContent>
                     </controls:ContentWithHeader>
-                
-                    <BoxView
-                        Grid.Column="1"
-                        VerticalOptions="Fill"
-                        HorizontalOptions="Center"
-                        WidthRequest="1"
-                        BackgroundColor="LightGray"/>
+
+                    <BoxView Style="{StaticResource VerticalSeparatorStyle}"
+                        Grid.Column="1"/>
                     
                     
                     <controls:ContentWithHeader
@@ -92,18 +68,12 @@
                             <Label>
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span
-                                            Text="67"
-                                            TextColor="Black"
-                                            FontSize="20"/>
-                                        <Span
-                                            Text=" mg/m3 "
-                                            TextColor="Black"
-                                            FontSize="14"/>
-                                        <Span
-                                            Text="(135%)"
-                                            TextColor="Black"
-                                            FontSize="20"/>
+                                        <Span Style="{StaticResource NormalTextSpanStyle}"
+                                            Text="67"/>
+                                        <Span Style="{StaticResource SmallTextSpanStyle}"
+                                            Text=" mg/m3 "/>
+                                        <Span Style="{StaticResource NormalTextSpanStyle}"
+                                            Text="(135%)"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
@@ -111,58 +81,36 @@
                     </controls:ContentWithHeader>
                 </Grid>
 
-                
-                <BoxView
-                    HeightRequest="1"
-                    HorizontalOptions="Fill"
-                    BackgroundColor="LightGray"/>
+
+                <BoxView Style="{StaticResource HorizontalSeparatorStyle}"/>
                 <controls:ContentWithHeader Title="Wilgotność">
                     <controls:ContentWithHeader.ControlContent>
                         <StackLayout>
-                            <Label
-                                Text="95%"
-                                FontSize="20"
-                                TextColor="Black" />
-                            <Slider
-                                Value="0.95"
-                                MaximumTrackColor="Gray"
-                                MinimumTrackColor="CornflowerBlue"
-                                ThumbColor="CornflowerBlue"/>
+                            <Label Style="{StaticResource NormalTextLabelStyle}"
+                                Text="95%"/>
+                            <Slider Style="{StaticResource SliderStyle}"
+                                Value="0.95"/>
                         </StackLayout>
                     </controls:ContentWithHeader.ControlContent>
                 </controls:ContentWithHeader>
-                
-                <BoxView
-                    HeightRequest="1"
-                    HorizontalOptions="Fill"
-                    BackgroundColor="LightGray"/>
+
+                <BoxView Style="{StaticResource HorizontalSeparatorStyle}"/>
                 <controls:ContentWithHeader Title="Ciśnienie">
                     <controls:ContentWithHeader.ControlContent>
                         <StackLayout>
-                            <Label
-                                Text="1026 hPa"
-                                FontSize="20"
-                                TextColor="Black" />
+                            <Label Style="{StaticResource NormalTextLabelStyle}"
+                                Text="1026 hPa"/>
                             <!-- Set Maximum before Minimum in Slider -->
-                            <Slider
+                            <Slider Style="{StaticResource SliderStyle}"
                                 Maximum="1100"
                                 Minimum="900"
-                                Value="1026"
-                                MaximumTrackColor="Gray"
-                                MinimumTrackColor="CornflowerBlue"
-                                ThumbColor="CornflowerBlue"/>
+                                Value="1026"/>
                         </StackLayout>
                     </controls:ContentWithHeader.ControlContent>
                 </controls:ContentWithHeader>
             </StackLayout>
 
-            <ImageButton
-                Padding="12,24"
-                HorizontalOptions="End"
-                VerticalOptions="Start"
-                WidthRequest="48"
-                HeightRequest="72"
-                BackgroundColor="Transparent"
+            <ImageButton Style="{StaticResource HelpButtonStyle}"
                 Source="baseline_help_outline_black_24.png"
                 Clicked="Help_Clicked"/>
         </Grid>
