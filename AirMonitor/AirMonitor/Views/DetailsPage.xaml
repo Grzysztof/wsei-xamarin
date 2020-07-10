@@ -6,7 +6,9 @@
              mc:Ignorable="d"
              x:Class="AirMonitor.Views.DetailsPage"
              xmlns:controls="clr-namespace:AirMonitor.Views.Controls"
-             Style="{StaticResource DetailsPageStyle}">
+             xmlns:viewModels="clr-namespace:AirMonitor.ViewModels"
+             Style="{StaticResource DetailsPageStyle}"
+             Title="Details Page">
 
     <ScrollView>
         <Grid>
