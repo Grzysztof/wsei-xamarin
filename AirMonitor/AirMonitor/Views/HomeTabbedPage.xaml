@@ -4,9 +4,18 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="AirMonitor.Views.HomeTabbedPage">
-  <!--Pages can be added as references or inline-->
-  <ContentPage Title="Tab 1" />
-  <ContentPage Title="Tab 2" />
-  <ContentPage Title="Tab 3" />
+             x:Class="AirMonitor.Views.HomeTabbedPage"
+             xmlns:views="clr-namespace:AirMonitor.Views"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom">
+    <NavigationPage Title="Home" IconImageSource="baseline_home_black_24">
+        <x:Arguments>
+            <views:HomePage/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Setttings" IconImageSource="baseline_settings_black_24">
+        <x:Arguments>
+            <views:SettingsPage/>
+        </x:Arguments>
+    </NavigationPage>
 </TabbedPage>
