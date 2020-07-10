@@ -9,6 +9,9 @@
              xmlns:viewModels="clr-namespace:AirMonitor.ViewModels"
              Style="{StaticResource DetailsPageStyle}"
              Title="Details Page">
+    <ContentPage.BindingContext>
+        <viewModels:DetailsViewModel/>
+    </ContentPage.BindingContext>
 
     <ScrollView>
         <Grid>
@@ -18,7 +21,7 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Style="{StaticResource CaqiValueSpanStyle}"
-                                      Text="56"/>
+                                      Text="{Binding CaqiVal}"/>
                                 <Span
                                     Text="{x:Static x:Environment.NewLine}"/>
                                 <Span Style="{StaticResource CaqiUnitSpanStyle}"
@@ -46,13 +49,13 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Style="{StaticResource NormalTextSpanStyle}"
-                                            Text="34"/>
+                                            Text="{Binding Pm25Val}"/>
                                         <Span Style="{StaticResource SmallTextSpanStyle}"
                                             Text=" mg/m3 "
                                             TextColor="Black"
                                             FontSize="14"/>
                                         <Span Style="{StaticResource NormalTextSpanStyle}"
-                                            Text="(137%)"/>
+                                            Text="{Binding Pm25PercentVal, StringFormat='({0}%)'}"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
@@ -71,11 +74,11 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Style="{StaticResource NormalTextSpanStyle}"
-                                            Text="67"/>
+                                            Text="{Binding Pm10Val}"/>
                                         <Span Style="{StaticResource SmallTextSpanStyle}"
                                             Text=" mg/m3 "/>
                                         <Span Style="{StaticResource NormalTextSpanStyle}"
-                                            Text="(135%)"/>
+                                            Text="{Binding Pm10PercentVal, StringFormat='({0}%)'}"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
@@ -89,9 +92,9 @@
                     <controls:ContentWithHeader.ControlContent>
                         <StackLayout>
                             <Label Style="{StaticResource NormalTextLabelStyle}"
-                                Text="95%"/>
+                                Text="{Binding HumVal, StringFormat='({0}%)'}"/>
                             <Slider Style="{StaticResource SliderStyle}"
-                                Value="0.95"/>
+                                Value="{Binding HumVal}"/>
                         </StackLayout>
                     </controls:ContentWithHeader.ControlContent>
                 </controls:ContentWithHeader>
@@ -101,12 +104,12 @@
                     <controls:ContentWithHeader.ControlContent>
                         <StackLayout>
                             <Label Style="{StaticResource NormalTextLabelStyle}"
-                                Text="1026 hPa"/>
+                                Text="{Binding PressVal, StringFormat='({0}hPa)'}"/>
                             <!-- Set Maximum before Minimum in Slider -->
                             <Slider Style="{StaticResource SliderStyle}"
                                 Maximum="1100"
                                 Minimum="900"
-                                Value="1026"/>
+                                Value="{Binding PressVal}"/>
                         </StackLayout>
                     </controls:ContentWithHeader.ControlContent>
                 </controls:ContentWithHeader>
