@@ -31,9 +31,9 @@
                     </Label>
                 </Frame>
                 <Label Style="{StaticResource CaqiTitleStyle}"
-                    Text="Świetna jakość!"/>
+                    Text="{Binding CaqiTitle}"/>
                 <Label Style="{StaticResource CaqiDescriptionStyle}"
-                    Text="Możesz bezpiecznie wyjść z domu bez swojej maski anty-smogowej i nie bać się o swoje zdrowie."/>
+                    Text="{Binding CaqiDesc}"/>
 
                 <BoxView Style="{StaticResource VerticalSeparatorStyle}"/>
 

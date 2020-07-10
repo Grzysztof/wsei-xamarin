@@ -60,6 +60,18 @@ namespace AirMonitor.ViewModels
             get => _pressVal;
             set => SetProperty(ref _pressVal, value);
         }
+        private string _caqiTitle = "Super jakość";
+        public string CaqiTitle
+        {
+            get => _caqiTitle;
+            set => SetProperty(ref _caqiTitle, value);
+        }
+        private string _caqiDesc = "Jest git, możesz spokojnie wychodzić";
+        public string CaqiDesc
+        {
+            get => _caqiDesc;
+            set => SetProperty(ref _caqiDesc, value);
+        }
 
         private void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {
